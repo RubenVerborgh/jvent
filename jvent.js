@@ -230,7 +230,8 @@
 		}
 
 		if (isArray(this.collection[event.type])) {
-			listeners = this.collection[event.type];
+			// Work on a copy in case the number of listeners changes
+			listeners = this.collection[event.type].slice();
 			i = 0;
 			len = listeners.length;
 
